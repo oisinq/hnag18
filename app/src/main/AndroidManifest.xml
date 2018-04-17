@@ -44,6 +44,9 @@
         <activity
             android:name=".NewEventActivity"
             android:label="Ócáid Nua" />
+        <activity
+            android:name=".ProfileActivity"
+            android:label="Prófíl" />
     </application>
 
 </manifest>

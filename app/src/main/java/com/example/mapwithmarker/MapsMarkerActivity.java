@@ -108,4 +108,9 @@ public class MapsMarkerActivity extends AppCompatActivity implements OnMapReadyC
         Intent colorsIntent = new Intent(MapsMarkerActivity.this, NewEventActivity.class);
         startActivity(colorsIntent);
     }
+
+    public void openProfile(View view) {
+        Intent colorsIntent = new Intent(MapsMarkerActivity.this, ProfileActivity.class);
+        startActivity(colorsIntent);
+    }
 }

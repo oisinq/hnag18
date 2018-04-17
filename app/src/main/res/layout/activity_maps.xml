@@ -31,10 +31,11 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Prófíl" />
+            android:text="Prófíl"
+            android:onClick="openProfile"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Grúpaí"/>
+            android:text="Grúpaí" />
     </LinearLayout>
 </LinearLayout>
