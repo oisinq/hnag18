@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="88dp"
+    android:id="@+id/container"
+    tools:background="@android:color/holo_blue_dark">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/gaeltacht"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_alignParentLeft="true"
+            android:paddingLeft="16dp"
+            >
+
+            <TextView
+                android:id="@+id/event_name_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Event name"
+                android:layout_weight="1"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:gravity="bottom"
+                />
+
+            <TextView
+                android:id="@+id/date_text_view"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:gravity="bottom"
+                tools:text="20th May, 2020" />
+
+            <TextView
+                android:id="@+id/location_text_view"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:gravity="top"
+                tools:text="The Cottage, Letterkenny" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>
