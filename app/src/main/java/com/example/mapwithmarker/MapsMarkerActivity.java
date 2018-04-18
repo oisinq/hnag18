@@ -13,7 +13,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 /**
- * An activity that displays a Google map with a marker (pin) to indicate a particular location.
+ * This is the map screen of the app, based on Google Maps "Map with a marker" starter code
+ * Link: https://github.com/googlemaps/android-samples/tree/master/tutorials/MapWithMarker
  */
 public class MapsMarkerActivity extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -40,8 +41,7 @@ public class MapsMarkerActivity extends AppCompatActivity implements OnMapReadyC
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        // Add a marker in Sydney, Australia,
-        // and move the map's camera to the same location.
+       // These are the locations that we have place on our map
         LatLng cootehill = new LatLng(54.073242, -7.081571);
         LatLng lk = new LatLng(54.951012, -7.736506);
         LatLng conradh = new LatLng(53.337042, -6.263078);
@@ -65,15 +65,10 @@ public class MapsMarkerActivity extends AppCompatActivity implements OnMapReadyC
         LatLng loc10 = new LatLng(53.234304, -6.553906);
         LatLng loc11 = new LatLng(52.776516, -7.63056);
 
-       //53.345658, -6.257408
-
-        MarkerOptions m1 = new MarkerOptions().position(cootehill).title("Cootehill Gaeltacht");
-        MarkerOptions m2 = new MarkerOptions().position(lk).title("Letterkenny Gaeltacht");
-        MarkerOptions m3 = new MarkerOptions().position(doyles).title("Doyle's Gaeltacht");
-
-        googleMap.addMarker(m1);
-        googleMap.addMarker(m2);
-        googleMap.addMarker(m3);
+        // We add each marker to the map with a title that shows when each marker is clicked on
+        googleMap.addMarker(new MarkerOptions().position(cootehill).title("Cootehill Gaeltacht"));
+        googleMap.addMarker(new MarkerOptions().position(lk).title("Letterkenny Gaeltacht"));
+        googleMap.addMarker(new MarkerOptions().position(doyles).title("Doyle's Gaeltacht"));
         googleMap.addMarker(new MarkerOptions().position(conradh).title("Club Conradh"));
         googleMap.addMarker(new MarkerOptions().position(blackrock).title("Blackrock"));
         googleMap.addMarker(new MarkerOptions().position(athlone).title("Athlone Gaeltacht"));
@@ -96,9 +91,13 @@ public class MapsMarkerActivity extends AppCompatActivity implements OnMapReadyC
 
 
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(cootehill));
+        // We set the centrepoint to Athlone when the map is first loaded, because it's close enough
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(athlone, 6.8f));
     }
 
+    /**
+     * These methods are used to load the other activities
+     */
     public void openEvents(View view) {
         Intent colorsIntent = new Intent(MapsMarkerActivity.this, EventListActivity.class);
         startActivity(colorsIntent);

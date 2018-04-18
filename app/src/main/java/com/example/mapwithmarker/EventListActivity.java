@@ -24,6 +24,11 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+/**
+ * This is where the code gets a bit more complex - I'm using an adapter that I previously made for one
+ * of my Udacity projects (https://github.com/oisin1001/MusicStructureApp), and it just wouldn't work for
+ * a while, so it's a bit messy. However, it's functional, which was our priority.
+ */
 public class EventListActivity extends AppCompatActivity {
 
     @Override
@@ -31,36 +36,28 @@ public class EventListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.events_list);
 
-        // Create a list of words
-        ArrayList<Event> words = new ArrayList<Event>();
-        words.add(new Event("Bualadh ag UCC", "18ú Aibrean 2018", "UCC, Corcaigh", "Beidh oiche dochreidte againn!", R.drawable.ucc));
-        words.add(new Event("Bualadh ag CineWorld", "19ú Aibrean 2018", "Sráid Parnell, Baile Átha Cliath", "Táimid ag dul go dti an pictúirlann!", R.drawable.cinema));
-        words.add(new Event("An zú", "20ú Aibrean 2018", "", "", R.drawable.zoo));
-        words.add(new Event("Oiche amach i Sligeach", "21ú Aibrean 2018", "", "", R.drawable.sligo));
-        words.add(new Event("Ag iascaireacht!", "22ú Aibrean 2018", "", "", R.drawable.fish2));
-        words.add(new Event("Oiche Earasmus i Londain", "23ú Aibrean 2018", "", "", R.drawable.londain));
-        words.add(new Event("Camán i Montreal", "24ú Aibrean 2018", "", "", R.drawable.caman));
-        words.add(new Event("Sampla8", "25ú Aibrean 2018", "", "", R.drawable.gaeltacht));
-        words.add(new Event("Sampla9", "26ú Aibrean 2018", "", "", R.drawable.gaeltacht));
-        words.add(new Event("Sampla10", "27ú Aibrean 2018", "", "", R.drawable.gaeltacht));
+        /* Create a list of events, with a location, date and description
+        Ideally this would link in with the markers on the map, but they don't currently. I don't
+        think it would be super difficult to do that. */
+        ArrayList<Event> events = new ArrayList<Event>();
+        events.add(new Event("Bualadh ag UCC", "18ú Aibrean 2018", "UCC, Corcaigh", "Beidh oiche dochreidte againn!", R.drawable.ucc));
+        events.add(new Event("Bualadh ag CineWorld", "19ú Aibrean 2018", "Sráid Parnell, Baile Átha Cliath", "Táimid ag dul go dti an pictúirlann!", R.drawable.cinema));
+        events.add(new Event("An zú", "20ú Aibrean 2018", "", "", R.drawable.zoo));
+        events.add(new Event("Oiche amach i Sligeach", "21ú Aibrean 2018", "", "", R.drawable.sligo));
+        events.add(new Event("Ag iascaireacht!", "22ú Aibrean 2018", "", "", R.drawable.fish2));
+        events.add(new Event("Oiche Earasmus i Londain", "23ú Aibrean 2018", "", "", R.drawable.londain));
+        events.add(new Event("Camán i Montreal", "24ú Aibrean 2018", "", "", R.drawable.caman));
+        events.add(new Event("Sampla8", "25ú Aibrean 2018", "", "", R.drawable.gaeltacht));
+        events.add(new Event("Sampla9", "26ú Aibrean 2018", "", "", R.drawable.gaeltacht));
+        events.add(new Event("Sampla10", "27ú Aibrean 2018", "", "", R.drawable.gaeltacht));
 
-        // Create an {@link WordAdapter}, whose data source is a list of {@link Word}s. The
-        // adapter knows how to create list items for each item in the list.
-        EventAdapter adapter = new EventAdapter(this, words);
+        EventAdapter adapter = new EventAdapter(this, events);
 
-        // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
-        // There should be a {@link ListView} with the view ID called list, which is declared in the
-        // word_list.xml layout file.
         final ListView listView = (ListView) findViewById(R.id.listview_flavor);
-
-        // Make the {@link ListView} use the {@link WordAdapter} we created above, so that the
-        // {@link ListView} will display list items for each {@link Word} in the list.
         listView.setAdapter(adapter);
 
-        // This code runs when an item in the grid is clicked
+        // This code runs when an item in the grid is clicked - it loads the current info into the EventActivity
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            // We can use this to find out exactly which episode is clicked on, and pass that information
-            // to the MusicActivity class (so it can be updated dynamically)
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent episodeIntent = new Intent(EventListActivity.this, EventActivity.class);

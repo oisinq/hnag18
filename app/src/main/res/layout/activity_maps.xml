@@ -3,10 +3,15 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
+
+    <!-- Note - I set the height to be 530dp manually, because we were having trouble getting
+     the map to display correctly on our Android phone, so we decided to cut a corner and hardcode
+     the size. Obviously this is not good practice at all, but we had a very limited amount of time and
+      not a massive amount of Android development experience -->
     <fragment
         android:id="@+id/map"
         android:layout_width="match_parent"
-        android:layout_height="730dp"
+        android:layout_height="530dp"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         tools:context="com.example.mapwithmarker.MapsMarkerActivity" />
 
@@ -18,24 +23,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="openEvents"
-            android:text="Ócáidaí"/>
+            android:text="@string/events"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ócáid nua"
+            android:text="@string/new_event"
             android:onClick="openNewEvent" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mapa"/>
+            android:text="@string/map"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Prófíl"
+            android:text="@string/profile"
             android:onClick="openProfile"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Grúpaí" />
+            android:text="@string/group" />
     </LinearLayout>
 </LinearLayout>

@@ -18,6 +18,9 @@ package com.example.mapwithmarker;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+/**
+ * New Event activity - this isn't interactive (yet!), so we just need to load the XML
+ */
 public class NewEventActivity extends AppCompatActivity {
 
     @Override

@@ -17,15 +17,15 @@ public class EventActivity extends AppCompatActivity {
         // This extracts the episode data from the intent
         event = (Event) getIntent().getSerializableExtra("Event");
 
-        // We can now change the artwork and TextViews to match the data in "episode"
-        changeAlbumArt();
+        // We can now change the artwork and TextViews to match the data in "event"
+        changeImage();
         changeText();
     }
 
     /**
-     * This changes the album art to that specified in "episode"
+     * This changes the image to that specified in "event"
      */
-    private void changeAlbumArt() {
+    private void changeImage() {
         ImageView albumArt = (ImageView) findViewById(R.id.event_image);
         albumArt.setImageResource(event.getImageResourceId());
     }

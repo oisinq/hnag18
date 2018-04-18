@@ -26,7 +26,7 @@ public class Event implements Serializable {
     }
 
     /**
-     * Get the name of the date
+     * Get the date of the event
      */
     public String getDate() {
         return date;

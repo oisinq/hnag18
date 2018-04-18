@@ -13,9 +13,6 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <!--
-             The API key for Google Maps-based APIs.
-        -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyB8gd_hHZvgA6XVwpYg_Il9cff_xeu_Rvo" />
@@ -34,19 +31,16 @@
         </activity>
         <activity
             android:name=".EventListActivity"
-            android:label="Ócáidí" />
+            android:label="@string/events" />
         <activity
             android:name=".EventActivity"
-            android:label="Ócáid" />
-        <activity
-            android:name=".HelloActivity"
-            android:label="Hello" />
+            android:label="@string/events" />
         <activity
             android:name=".NewEventActivity"
-            android:label="Ócáid Nua" />
+            android:label="@string/new_event" />
         <activity
             android:name=".ProfileActivity"
-            android:label="Prófíl" />
+            android:label="@string/profile" />
     </application>
 
 </manifest>

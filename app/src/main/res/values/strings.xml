@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Fáinne</string>
     <string name="title_activity_maps">Fáinne</string>
+    <string name="events">Ócáidaí</string>
+    <string name="new_event">Ócáid nua</string>
+    <string name="map">Mapa</string>
+    <string name="profile">Prófíl</string>
+    <string name="group">Grúpaí</string>
 </resources>

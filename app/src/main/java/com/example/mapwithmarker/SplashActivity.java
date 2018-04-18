@@ -11,6 +11,9 @@ import java.util.TimerTask;
  * Created by Oisin Quinn (@oisin1001) on 17/04/2018.
  */
 
+/**
+ * This is a splash screen of what a log in screen would look like - mockup image from @foxe22 on Github
+ */
 public class SplashActivity extends Activity {
     private static final long DELAY = 3000;
     private boolean scheduled = false;
